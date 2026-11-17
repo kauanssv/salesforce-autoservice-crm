@@ -1,58 +1,167 @@
-# Salesforce DX Project
+# AutoService CRM
 
-Salesforce DX is a development approach that brings source-driven development, team collaboration, and continuous integration to the Salesforce Platform. Instead of working directly in an org through a web browser, you work with metadata as source files in a local DX project, track changes in version control, and deploy through automated processes.
+Projeto de portfólio desenvolvido na plataforma Salesforce com o objetivo de criar um sistema completo para gerenciamento de serviços automotivos.
 
-This project template gets you started with the tools and structure you need to build Salesforce applications using source control, scratch orgs, and the Salesforce CLI.
+A proposta do projeto é simular uma solução real de CRM para oficinas e centros automotivos, permitindo o gerenciamento de clientes, veículos, ordens de serviço, diagnósticos, orçamentos, técnicos e acompanhamento dos serviços.
 
-## Prerequisites
+O projeto será desenvolvido de forma evolutiva, aplicando recursos administrativos e de desenvolvimento da plataforma Salesforce.
 
-Before you start, make sure you have:
+## Objetivo
 
-- **Salesforce CLI** - Download from [developer.salesforce.com/tools/salesforcecli](https://developer.salesforce.com/tools/salesforcecli). See [Install Salesforce CLI](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_install_cli.htm) for details.
-- **VS Code with Salesforce Extension Pack** - See [Installation Instructions](https://developer.salesforce.com/docs/platform/sfvscode-extensions/guide/install.html) for details. Includes the Agentforce Vibes extension.
-- **A development org** - Sign up for a free Developer Edition org [here](https://developer.salesforce.com/signup).
-- **Dev Hub enabled** (optional, required to create scratch orgs) - You can enable Dev Hub in your development org under Setup > Dev Hub.  See [Provide Developers Access to Salesforce DX Tools](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_setup_dx_tools.htm).
+O objetivo principal do AutoService CRM é colocar em prática conhecimentos de Salesforce em um projeto completo, aproximando o desenvolvimento de um cenário real de mercado.
 
-## Project Structure
+Ao longo do projeto serão aplicados conceitos de:
 
-Your DX project follows this structure:
+- Salesforce Administration
+- Modelagem de dados
+- Flow Builder
+- Apex
+- SOQL
+- Lightning Web Components
+- Integrações REST
+- Segurança e permissões
+- Reports e Dashboards
+- Salesforce CLI
+- Git e GitHub
+- Agentforce
 
-- **`force-app/main/default/`** - Your metadata source files live in this default package directory. You can configure additional package directories in the `sfdx-project.json` file.
-- **`config/`** - Scratch org definitions and project settings
-- **`scripts/`** - Automation scripts for common tasks
-- **`sfdx-project.json`** - Project manifest that defines package directories, namespace, API version, and other project-level settings
+## Fluxo principal do sistema
 
-See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm).
+O processo principal do AutoService será baseado no seguinte fluxo:
 
-## Get Started
+```text
+Cliente
+   ↓
+Veículo
+   ↓
+Ordem de Serviço
+   ↓
+Diagnóstico
+   ↓
+Orçamento
+   ↓
+Aprovação
+   ↓
+Reparo
+   ↓
+Entrega
+```
 
-Ready to start developing? The [Get Started with Salesforce DX](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_get_started_dx.htm) guide walks you through your first project, from creating a scratch org to creating a simple Apex class or LWC to deploying your code to a sandbox.
+## Funcionalidades planejadas
 
-## Common Salesforce CLI Commands
+Entre as principais funcionalidades previstas estão:
 
-Here are common CLI commands that you'll use the most:
+- Cadastro de clientes
+- Cadastro e gerenciamento de veículos
+- Criação de ordens de serviço
+- Registro de diagnósticos
+- Criação e aprovação de orçamentos
+- Acompanhamento do status do serviço
+- Distribuição de serviços entre técnicos
+- Automação de processos com Flow Builder
+- Regras de validação
+- Controle de acesso com Permission Sets
+- Desenvolvimento de regras de negócio em Apex
+- Testes automatizados em Apex
+- Componentes personalizados com Lightning Web Components
+- Integrações com APIs externas
+- Relatórios e dashboards
+- Automação e atendimento utilizando Agentforce
 
-- `sf org login web`: Authorize an org
-- `sf org open`: Open your org in a browser
-- `sf org create scratch`: Create a scratch org
-- `sf project deploy start`: Deploy metadata to your org
-- `sf project retrieve start`: Retrieve metadata from your org
-- `sf template generate <artifact>`: Scaffold new components, such as Apex classes and triggers, LWC components, Lightning apps, and more
-- `sf apex <command>`: Run Apex tests, run anonymous Apex blocks, and view logs
-- `sf data <command>`: Work with test data
-- `sf alias <command>`: Manage org aliases
-- `sf config <command>`: Configure CLI settings
+## Arquitetura inicial
 
-## Use Agentforce Vibes to Build Lightning Apps
+A estrutura inicial de dados será baseada em objetos padrão e personalizados da Salesforce.
 
-Transform your ideas into custom Lightning apps that extend CRM workflows directly in Lightning Experience. Through natural conversations with Agentforce Vibes, implement custom objects and fields, complex business logic, and dynamic UI components. See [Build a Lightning App Using Agentforce Vibes](https://developer.salesforce.com/docs/platform/einstein-for-devs/guide/lexapp-overview.html).
+```text
+Account
+   ↓
+Contact
+   ↓
+Vehicle__c
+   ↓
+Service_Order__c
+   ├── Diagnosis
+   ├── Budget
+   └── Service
+```
 
-## Additional Resources
+A modelagem poderá ser alterada durante o desenvolvimento conforme novos requisitos forem adicionados ao projeto.
 
-- [Agentforce Vibes Developer Guide](https://developer.salesforce.com/docs/platform/einstein-for-devs/guide/einstein-overview.html)
-- [Salesforce CLI Installation Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/)
-- [Salesforce CLI Plugin Development Guide](https://developer.salesforce.com/docs/platform/salesforce-cli-plugin/guide/conceptual-overview.html)
-- [Salesforce VS Code Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
+## Tecnologias
 
+- Salesforce Platform
+- Salesforce Lightning Experience
+- Flow Builder
+- Apex
+- SOQL
+- Lightning Web Components
+- Salesforce CLI
+- REST APIs
+- Git
+- GitHub
+- Agentforce
+
+## Estrutura do projeto
+
+```text
+salesforce-autoservice-crm/
+│
+├── force-app/
+│   └── main/
+│       └── default/
+│
+├── config/
+├── scripts/
+├── .forceignore
+├── .gitignore
+├── README.md
+└── sfdx-project.json
+```
+
+Conforme o projeto evoluir, a pasta `force-app/main/default` armazenará metadados como:
+
+```text
+classes/
+triggers/
+lwc/
+flows/
+objects/
+permissionsets/
+applications/
+```
+
+## Etapas de desenvolvimento
+
+O projeto será desenvolvido seguindo aproximadamente esta ordem:
+
+1. Planejamento e modelagem
+2. Configuração administrativa
+3. Estrutura dos processos de negócio
+4. Automações com Flow Builder
+5. Configuração do ambiente com Salesforce CLI
+6. Desenvolvimento Apex
+7. Testes Apex
+8. Lightning Web Components
+9. Integrações REST
+10. Processamento assíncrono
+11. Reports e Dashboards
+12. Agentforce
+13. Documentação final
+
+## Status do projeto
+
+🚧 **Em desenvolvimento**
+
+Atualmente o projeto está em sua fase inicial de estruturação e configuração do ambiente de desenvolvimento.
+
+## Sobre o projeto
+
+Este projeto foi criado como parte do meu desenvolvimento profissional na plataforma Salesforce e será utilizado como portfólio para demonstrar conhecimentos de administração, automação e desenvolvimento Salesforce.
+
+O objetivo não é apenas implementar funcionalidades, mas também aplicar boas práticas de organização, versionamento, segurança, automação e desenvolvimento.
+
+## Autor
+
+**Kauan de Souza dos Santos Vieira**
+
+Estudante de Análise e Desenvolvimento de Sistemas e profissional em formação na plataforma Salesforce.
